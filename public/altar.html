@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GranMania | Altar da Ruina</title>
+
+    <script src="./assets/js/funcoes.js"></script>
+
+    <link rel="icon" href="./assets/icon/icon_gc.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+
+<div class="banner-altar">                    
+    <!--header inicio-->
+
+        <div class="header">
+            <div class="container_header">
+                <img src="assets/imgs/logo.png"  alt="Logotipo do Site">
+                <ul class="navbar">
+                    <li>
+                        <a href="./index.html">
+                            Início
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <!--header fim-->
+
+
+    <div class="guerra">
+        <div class="container_altar">
+
+            <h1>Bem vindo ao Altar, aqui você poderá cravar batalhas intensas entre os Membros de GrandChease!
+               </h1>
+
+            <div class="campo">
+                <div class="container_campo">
+                    <h2>BATALHA DE CAZEAGE!</h2>
+                   
+
+                    <h2>Primeiro Personagem:</h2><select class="select_altar" name="" id="in_gc1">
+                        <option value="0">Selecione</option>
+                        <option value="Elesis.webp">Elesis</option>
+                        <option value="Lire.webp">Lire</option>
+                        <option value="Arme.webp">Arme</option>
+                        <option value="Lass.jpg">Lass</option>
+                        <option value="amy.webp">Amy</option>
+                        <option value="ryan.webp">Ryan</option>
+                        <option value="Ronan.jpg">Ronan</option>
+                        <option value="jin.jpg">Jin</option>
+                        <option value="siegggg.png">Sieghart</option>
+                        <option value="marii.jpg">Mari</option>
+                        <option value="dio.webp">Dio</option>
+                        <option value="zero.webp">Zero</option>
+                        <option value="rey.webp">Rey</option>
+                        <option value="lupus.webp">Lupus</option>
+                        <option value="lin.jpg">Lin</option>
+                        <option value="azin.webp">Azin</option>
+                        <option value="holy.webp">Holy</option>
+                        <option value="edel.webp">Edel</option>
+                        <option value="veigas.webp">Veigas</option>
+                        <option value="unooo.webp">Uno</option>
+                    </select><br><br>
+
+                    <h2>Segundo Personagem:</h2><select class="select_altar" name="" id="in_gc2">
+                        <option value="0">Selecione</option>
+                        <option value="Elesis.webp">Elesis</option>
+                        <option value="Lire.webp">Lire</option>
+                        <option value="Arme.webp">Arme</option>
+                        <option value="Lass.jpg">Lass</option>
+                        <option value="amy.webp">Amy</option>
+                        <option value="ryan.webp">Ryan</option>
+                        <option value="Ronan.jpg">Ronan</option>
+                        <option value="jin.jpg">Jin</option>
+                        <option value="siegggg.png">Sieghart</option>
+                        <option value="marii.jpg">Mari</option>
+                        <option value="dio.webp">Dio</option>
+                        <option value="zero.webp">Zero</option>
+                        <option value="rey.webp">Rey</option>
+                        <option value="lupus.webp">Lupus</option>
+                        <option value="lin.jpg">Lin</option>
+                        <option value="azin.webp">Azin</option>
+                        <option value="holy.webp">Holy</option>
+                        <option value="edel.webp">Edel</option>
+                        <option value="veigas.webp">Veigas</option>
+                        <option value="unooo.webp">Uno</option>
+                    </select><br><br>
+
+                    <button class="botao_altar" onclick="batalha()">Lutem</button>
+
+                </div>
+
+                <div class="imagens_gc">
+                    <img src="" width="300px" id="img1">
+                    <span class="vs" id="vs"></span>
+                    <img src="" width="300px" id="img2">
+                </div>
+            </div>
+            <div class="moedas" >
+                Quantas moedas Grand Chease você ganhou em batalha? <input id="input_deposito">
+                Informe quantas moedas você tinha: <input id="input_valor">
+                <button onclick="grana_batalha()">Total Moedas</button>
+                <div id="frase"></div>
+               </div>
+
+               <div class="metrica">
+                <p>Medias de perssonagens favoritos no PVE/PVP<u> <a href="metrica.html">Entrar</a></u></p>
+
+               </div>
+        </div>
+  
+    </div>
+
+</body>
+
+</html>
+<script>
+    
+    function batalha() {
+
+     
+
+        //batalha
+        if (in_gc1.value == "0" || in_gc2.value == "0") {
+            alert('Preencha todos os campos!')
+        }
+        else {
+            img1.src = `./assets/imgs/${in_gc1.value}`
+            vs.innerHTML = "VERSUS."
+            img2.src = `./assets/imgs/${in_gc2.value}`
+        }
+
+        // in_nome.value = '';
+        in_gc1.value = 0;
+        in_gc2.value = 0;
+        
+        }
+
+        var soma = 0
+        var total = 0
+        var porcentagem = 0
+        function grana_batalha() {
+            var deposito = Number(input_deposito.value)
+            var valor = Number(input_valor.value)
+            
+            
+             frase.innerHTML = ""
+              for(var numero = 1; numero <= deposito;numero ++) {
+                total+= valor 
+                    
+                
+                if(numero % 3 == 0){
+                   porcentagem = (total * 1) / 100
+                  total += porcentagem
+                  
+                    }frase.innerHTML += `${numero}Batalha:${total.toFixed(2)}<br>`
+                } 
+                
+                    frase.innerHTML += `total de moedas guardada: ${total.toFixed(2)}`
+                }
+</script>
